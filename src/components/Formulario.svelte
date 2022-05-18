@@ -38,7 +38,7 @@ import montaUsuario from "../utils/montaUsuario";
     type="text"
     class="input"
     class:erro-input={statusDeErro === 404}
-    placeholder="Pesquise aqui um usuário"
+    placeholder="Pesquise por nome de usuário"
     bind:value={valorInput}
   />
   {#if statusDeErro === 404}
