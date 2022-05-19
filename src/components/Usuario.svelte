@@ -4,7 +4,6 @@
   export let usuario: IUsuario;
 
   $: temRepositorios = Boolean(usuario.repositorios_recentes.length);
-
 </script>
 
 <div class="card-usuario">
@@ -37,23 +36,23 @@
       </div>
     </div>
     {#if temRepositorios}
-    <div class="repositorios">
-      <h2 class="titulo">Repostitórios Recentes:</h2>
-      <ul>
-        {#each usuario.repositorios_recentes as repositorio}
-          <li>
-            <a
-              href={repositorio.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="repositorio"
+      <div class="repositorios">
+        <h2 class="titulo">Repostitórios Recentes:</h2>
+        <ul>
+          {#each usuario.repositorios_recentes as repositorio}
+            <li>
+              <a
+                href={repositorio.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="repositorio"
               >
-              {repositorio.nome}
-            </a>
-          </li>
-        {/each}
-      </ul>
-    </div>
+                {repositorio.nome}
+              </a>
+            </li>
+          {/each}
+        </ul>
+      </div>
     {/if}
   </div>
 </div>

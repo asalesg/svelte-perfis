@@ -1,12 +1,14 @@
 import type IRepositorio from "../interfaces/IRepositorios";
 import type IUsuario from "../interfaces/IUsuario";
 
-export default function montaUsuario(dadosUsuario: any, dadosRepositorios: any): IUsuario {
-
+export default function montaUsuario(
+  dadosUsuario: any,
+  dadosRepositorios: any
+): IUsuario {
   const repositorios_recentes = dadosRepositorios.map((repositorio) => {
     return {
       nome: repositorio.name,
-      url: repositorio.url
+      url: repositorio.html_url,
     } as IRepositorio;
   });
   return {
@@ -16,6 +18,6 @@ export default function montaUsuario(dadosUsuario: any, dadosRepositorios: any):
     perfil_url: dadosUsuario.html_url,
     repostiroios_publicos: dadosUsuario.public_repos,
     seguidores: dadosUsuario.followers,
-    repositorios_recentes
+    repositorios_recentes,
   };
 }

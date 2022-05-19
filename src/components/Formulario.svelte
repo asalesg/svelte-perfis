@@ -3,7 +3,7 @@
 
   import type IUsuario from "../interfaces/IUsuario";
   import { buscaRepositorios, buscaUsuario } from "../requisicoes";
-import montaUsuario from "../utils/montaUsuario";
+  import montaUsuario from "../utils/montaUsuario";
 
   let valorInput = "";
 
@@ -15,7 +15,7 @@ import montaUsuario from "../utils/montaUsuario";
 
   async function aoSubmeter() {
     const respostaUsuario = await buscaUsuario(valorInput);
-    const respostaRepositorios = await buscaRepositorios(valorInput)
+    const respostaRepositorios = await buscaRepositorios(valorInput);
 
     if (respostaUsuario.ok && respostaRepositorios.ok) {
       const dadosUsuario = await respostaUsuario.json();
@@ -25,7 +25,7 @@ import montaUsuario from "../utils/montaUsuario";
         "aoAlterarUsuario",
         montaUsuario(dadosUsuario, dadosRepositorios)
       );
-        statusDeErro = null;
+      statusDeErro = null;
     } else {
       statusDeErro = respostaUsuario.status;
       dispatch("aoAlterarUsuario", null);
@@ -45,11 +45,10 @@ import montaUsuario from "../utils/montaUsuario";
     <span class="erro">Usuário não encontrado</span>
   {/if}
   <div class="botao-container">
-    <button 
-    type="submit" 
-    class="botao">Buscar
-    <img src="/assets/lupa.svg" alt="icone lupa">
-  </button>
+    <button type="submit" class="botao"
+      >Buscar
+      <img src="/assets/lupa.svg" alt="icone lupa" />
+    </button>
   </div>
 </form>
 
