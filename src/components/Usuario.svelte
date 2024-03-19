@@ -32,12 +32,12 @@
         Seguidores: <span>{usuario.seguidores}</span>
       </div>
       <div class="info">
-        Repostitórios: <span>{usuario.repostiroios_publicos}</span>
+        Repositórios: <span>{usuario.repostiroios_publicos}</span>
       </div>
     </div>
     {#if temRepositorios}
       <div class="repositorios">
-        <h2 class="titulo">Repostitórios Recentes:</h2>
+        <h2 class="titulo">Repositórios Recentes:</h2>
         <ul>
           {#each usuario.repositorios_recentes as repositorio}
             <li>
